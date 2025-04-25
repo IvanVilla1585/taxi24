@@ -140,6 +140,40 @@ To run the init tests, use the following command:
 npm run test
 ```
 
+## 📍 Core Endpoints
+
+### Drivers
+
+| **Method** | **Route**                    | **Description**           |
+|------------|------------------------------|---------------------------|
+| `GET`      | `/api/drivers`               | Get drivers by filters    |
+| `GET`      | `/api/drivers/nearby`        | Get nearby drivers        |
+| `GET`      | `/api/drivers/:id`           | Get a driver by id        |
+| `POST`     | `/api/drivers`               | Register a new driver     |
+| `PATCH`    | `/api/drivers/:id`           | Update a driver by id     |
+| `DELETE`   | `/api/drivers/:id`           | Delete a driver by id     |
+
+### Passengers
+
+| **Method** | **Route**                    | **Description**           |
+|------------|------------------------------|---------------------------|
+| `GET`      | `/api/passengers`            | Get passengers by filters |
+| `GET`      | `/api/passengers/:id`        | Get a passenger by id     |
+| `POST`     | `/api/passengers`            | Register a new passenger  |
+| `PATCH`    | `/api/passengers/:id`        | Update a passenger by id  |
+| `DELETE`   | `/api/passengers/:id`        | Delete a passenger by id  |
+
+### Trips
+
+| **Method** | **Route**                    | **Description**           |
+|------------|------------------------------|---------------------------|
+| `GET`      | `/api/trips`                 | Get trips by filters      |
+| `GET`      | `/api/trips/:id`             | Get a trip by id          |
+| `POST`     | `/api/trips`                 | Register a new trip       |
+| `PATCH`    | `/api/trips/:id`             | Update a trip by id       |
+| `DELETE`   | `/api/trips/:id`             | Delete a trip by id       |
+
+
 ## 📄 License
 
 This project is licensed under the MIT License.
