@@ -33,14 +33,6 @@ export class TripService
     private readonly passengerRepository: PassengerRepository,
   ) {}
 
-  async find(filters: FiltersTripDto): Promise<Trip[]> {
-    Object.entries(filters).forEach(([key, value]) => {
-      // user[key] = value;
-      console.log(key, value);
-    });
-    return Promise.resolve([]);
-  }
-
   async findAndPaginate(
     filters: FiltersTripDto,
   ): Promise<PaginationTripResponse> {
@@ -114,7 +106,7 @@ export class TripService
     const result = await this.repository.save(trip);
 
     if (
-      result.status === TripStatus.CANCELED ||
+      result.status === TripStatus.CANCELLED ||
       result.status === TripStatus.COMPLETED
     ) {
       await this.driverRepository.updateData(result.driverId, {

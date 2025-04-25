@@ -27,14 +27,6 @@ export class DriverService
 {
   constructor(private readonly repository: DriverRepository) {}
 
-  async find(filters: FiltersDriverDto): Promise<Driver[]> {
-    Object.entries(filters).forEach(([key, value]) => {
-      // user[key] = value;
-      console.log(key, value);
-    });
-    return Promise.resolve([]);
-  }
-
   async findAndPaginate(
     filters: FiltersDriverDto,
   ): Promise<PaginationDriverResponse> {

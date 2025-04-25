@@ -27,14 +27,6 @@ export class PassengerService
 {
   constructor(private readonly repository: PassengerRepository) {}
 
-  async find(filters: FiltersPassengerDto): Promise<Passenger[]> {
-    Object.entries(filters).forEach(([key, value]) => {
-      // user[key] = value;
-      console.log(key, value);
-    });
-    return Promise.resolve([]);
-  }
-
   async findAndPaginate(
     filters: FiltersPassengerDto,
   ): Promise<PaginationPassengerResponse> {

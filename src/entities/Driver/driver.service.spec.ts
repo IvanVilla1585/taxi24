@@ -46,21 +46,6 @@ describe('DriverService', () => {
     repository = module.get(DriverRepository);
   });
 
-  describe('find', () => {
-    it('should log the filters and return empty array', async () => {
-      const consoleSpy = jest.spyOn(console, 'log').mockImplementation();
-
-      const result = await service.find(filters);
-      expect(result).toEqual([]);
-      expect(consoleSpy).toHaveBeenCalledWith('limit', 10);
-      expect(consoleSpy).toHaveBeenCalledWith('offset', 0);
-      expect(consoleSpy).toHaveBeenCalledWith('sortBy', 'createdAt');
-      expect(consoleSpy).toHaveBeenCalledWith('direction', 'ASC');
-
-      consoleSpy.mockRestore();
-    });
-  });
-
   describe('findAndPaginate', () => {
     it('should return paginated drivers', async () => {
       repository.findAndPaginate.mockResolvedValue([drivers as Driver[], 2]);

@@ -125,6 +125,13 @@ npm run start:dev
 
 This will start the NestJS application in development mode. You should now be able to access it on http://localhost:3000, if you setup the variable PORT use this value instead of 3000.
 
+## 🌱 Seed Data
+To insert sample data using HTTP requests:
+
+```bash
+npm run seed
+```
+
 ## 🧑‍💻 Running Tests
 
 To run the init tests, use the following command:

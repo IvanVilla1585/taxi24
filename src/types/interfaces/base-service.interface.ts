@@ -5,7 +5,6 @@ export interface IBaseService<
   BodyUpdate,
   PaginateResponse,
 > {
-  find(filters: Filters): Promise<Model[]>;
   findById(id: number): Promise<Model>;
   create(data: BodyCreate): Promise<Model>;
   updateById(id: number, data: BodyUpdate): Promise<Model>;

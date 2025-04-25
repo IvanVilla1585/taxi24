@@ -45,7 +45,7 @@ export const create: Joi.ObjectSchema = Joi.object().keys({
 export const update: Joi.ObjectSchema = Joi.object().keys({
   status: Joi.string().valid(
     TripStatus.COMPLETED,
-    TripStatus.CANCELED,
+    TripStatus.CANCELLED,
     TripStatus.IN_SERVICE,
   ),
   endTime: Joi.string()

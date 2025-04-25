@@ -59,7 +59,7 @@ export const seedTrips = async (dataSource: DataSource) => {
       origin: 'Avenida Siempre Viva',
       destination: 'Calle Falsa 123',
       price: 7000,
-      status: TripStatus.CANCELED,
+      status: TripStatus.CANCELLED,
       startTime: '14:30:00',
     },
   ];
