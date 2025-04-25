@@ -83,7 +83,7 @@ export class DriverRepository extends Repository<Driver> {
           )
         `,
       )
-      .andWhere('isActive = :isActive', { isActive: true })
+      .andWhere('"isActive" = :isActive', { isActive: true })
       .orderBy('distance', 'ASC')
       .setParameters({ lng: longitude, lat: latitude, radius: radiusMeters })
       .getMany();

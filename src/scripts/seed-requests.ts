@@ -47,6 +47,16 @@ const seed = async () => {
       documentType: 'CC',
     });
 
+    const passenger5 = await axios.post(`${API_BASE}/passengers`, {
+      name: 'Laura Maria',
+      lastName: 'López',
+      email: 'lauramarialopez@example.com',
+      password: 'password1234',
+      document: '66778899037823',
+      phoneNumber: '4567890123',
+      documentType: 'CC',
+    });
+
     await axios.post(`${API_BASE}/passengers`, {
       name: 'David Pérez',
       lastName: 'Pérez',
@@ -114,6 +124,34 @@ const seed = async () => {
       documentType: 'CC',
     });
 
+    const driver5 = await axios.post(`${API_BASE}/drivers`, {
+      name: 'Nearby Driver 5',
+      lastName: 'García',
+      email: 'nearby5@example.com',
+      password: 'pass001',
+      isActive: true,
+      latitude: 4.6481,
+      longitude: -74.2435,
+      license: 'LIC001',
+      document: 'DOC00112330756',
+      phoneNumber: '3210000001',
+      documentType: 'CC',
+    });
+
+    await axios.post(`${API_BASE}/drivers`, {
+      name: 'Nearby Driver 6',
+      lastName: 'García',
+      email: 'nearby6@example.com',
+      password: 'pass002',
+      isActive: true,
+      latitude: 4.6502,
+      longitude: -74.2447,
+      license: 'LIC002',
+      document: 'DOC0022343745',
+      phoneNumber: '3210000002',
+      documentType: 'CC',
+    });
+
     await axios.post(`${API_BASE}/drivers`, {
       name: 'Far Driver 1',
       lastName: 'Castro',
@@ -175,10 +213,19 @@ const seed = async () => {
       passengerId: (passenger4.data as { id: number }).id,
     });
 
+    const trip5 = await axios.post(`${API_BASE}/trips`, {
+      price: 7500,
+      origin: 'Calle 100',
+      destination: 'Calle 50',
+      driverId: (driver5.data as { id: number }).id,
+      passengerId: (passenger5.data as { id: number }).id,
+    });
+
     const tripId1 = (trip1.data as { id: number }).id;
     const tripId2 = (trip2.data as { id: number }).id;
     const tripId3 = (trip3.data as { id: number }).id;
     const tripId4 = (trip4.data as { id: number }).id;
+    const tripId5 = (trip5.data as { id: number }).id;
 
     await axios.patch(`${API_BASE}/trips/${tripId1}`, {
       status: 'IN_SERVICE',
@@ -193,6 +240,11 @@ const seed = async () => {
     await axios.patch(`${API_BASE}/trips/${tripId3}`, {
       status: 'IN_SERVICE',
       startTime: '12:30:30',
+    });
+
+    await axios.patch(`${API_BASE}/trips/${tripId5}`, {
+      status: 'IN_SERVICE',
+      startTime: '11:30:30',
     });
 
     await axios.patch(`${API_BASE}/trips/${tripId4}`, {
